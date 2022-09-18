@@ -9,13 +9,11 @@ import java.util.List;
 import java.util.Random;
 
 public class Categories {
-    private List<ClueDTO> clueDTOS;
-
     public static List<ClueDTO> getCategoyList(List<ClueDTO> clueList) {
         try {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 6; i++) {
                 Random randomClue = new Random();
-                String clueURL = "https://jservice.kenzie.academy/api/clues/" + randomClue.nextInt(100);
+                String clueURL = "https://jservice.kenzie.academy/api/clues/" + randomClue.nextInt(4950);
                 String clueResponse = CustomHttpClient.sendGET(clueURL);
                 ObjectMapper mapper = new ObjectMapper();
                 ClueDTO clueDTO;

@@ -5,20 +5,22 @@ import com.kenzie.app.data.DTO.ClueDTO;
 import java.util.List;
 
 public class Question {
-    //gets response from user and gets question
-    String questionStr;
+    ClueDTO questionDTO;
 
-    public void setQuestionStr(String questionStr) {
-        this.questionStr = questionStr;
+    public ClueDTO getQuestionDTO() {
+        return questionDTO;
     }
 
-    public String getQuestionStr(String catTitle, List<ClueDTO> clueList) {
-        String question = "";
+    public void setQuestionDTO(ClueDTO questionDTO) {
+        this.questionDTO = questionDTO;
+    }
+
+    public ClueDTO getQuestionDTO(String catTitle, List<ClueDTO> clueList) {
         for (int i = 0; i < clueList.size(); i++) {
             if (clueList.get(i).getCategory().getTitle().equalsIgnoreCase(catTitle)) {
-                question = (clueList.get(i).getQuestion());
+                questionDTO = (clueList.get(i));
             }
         }
-        return question;
+        return questionDTO;
     }
 }
